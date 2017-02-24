@@ -221,12 +221,58 @@ namespace snake_cs
                     label2.Text = (gear == D) ? "D" : "R";
                     break;
                 case Keys.A:
+                    LogitechGSDK.LogiLedInit();
+                    LogitechGSDK.LogiLedSetLighting(0, 0, 0);
+                    // get the values from the sample
+
+                    int duration = 6000;
+                    int interval = 300;
+                    int redVal = 100;
+                    int greenVal = 0;
+                    int blueVal = 50;
+                    redVal = 0;
+                    greenVal = 100;
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.THREE, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.W, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.A, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.Z, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.LEFT_ALT, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.S, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.D, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.F, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.G, redVal, greenVal, blueVal, duration, interval);
+
                     leftLight = !leftLight;
                     button5.Visible = leftLight;
                     break;
                 case Keys.S:
+                    LogitechGSDK.LogiLedInit();
+                    LogitechGSDK.LogiLedSetLighting(0, 0, 0);
+                    // get the values from the sample
+
+                    duration = 6000;
+                    interval = 300;
+                    redVal = 100;
+                    greenVal = 0;
+                    blueVal = 50;
+                    redVal = 0;
+                    greenVal = 100;
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.H, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.J, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.K, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.L, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.SEMICOLON, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.P, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.ZERO, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.PERIOD, redVal, greenVal, blueVal, duration, interval);
+                    LogitechGSDK.LogiLedFlashSingleKey(keyboardNames.RIGHT_ALT, redVal, greenVal, blueVal, duration, interval);
                     rightLight = !rightLight;
                     button6.Visible = rightLight;
+                    break;
+                case Keys.Escape:
+                    pictureBox1.Hide();
+                    label2.Hide();
+                    tableLayoutPanel1.Show();
                     break;
             }
         }
